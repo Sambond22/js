@@ -1,0 +1,45 @@
+.wrapper{
+    height: 100vh;
+    width: 100vw;
+    background-color: #344151;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:3.5%;
+}
+
+.heading{
+    color: rgb(3,152,212);
+    font-size: large;
+    font-weight: bold;
+  
+}
+
+
+.incrementpart{
+ 
+    display: flex;
+   gap: 20%;
+   padding: 0.75rem;
+   background-color: white;
+   margin-right: 2%;
+   padding-left: 2rem;
+   padding-right: 3.8rem;
+   border:#bfbfbf 2rem;
+   color: #344151;
+   font-size: 25px;
+}
+
+#minus{
+border-right-width: 2px;
+
+}
+#plus{
+border-left-width: 2px;
+}
+#jump{
+    padding: 10px;
+    margin-right: 20px;
+}
+
