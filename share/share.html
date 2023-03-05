@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="share.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+
+        <div class="card">
+            <img src="./2.jpeg" alt="image">
+            <div class="headd"><h1>Shyam Bonde</h1></div>
+            <div class="info">Founder, Apni Duniya</div>
+            <div class="group">
+                <button onclick="openModal()" class="share">Share My Profile</button>
+                <button class="follow">Follow Me</button>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Modal Component -->
+    <div class="modal">
+        <div class="modal-headd">
+            <h1>Share My Profile</h1>
+            <div>
+                 <i onclick="closeModal()" class="fa-solid fa-xmark close"></i>
+            </div>
+        </div>
+
+        <div>
+            <h3>Share this via</h3>
+            <div class="icon-contain">
+                 <a href="#" class="icon" id="facebook">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="#" class="icon" id="twitter">
+          <i class="fa-brands fa-twitter"></i>
+        </a>
+        <a href="#" class="icon" id="instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="#" class="icon" id="whatsapp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="#" class="icon" id="telegram">
+          <i class="fa-brands fa-telegram"></i>
+        </a>
+            </div>
+        </div>    
+
+    </div>
+
+    <!-- overlay(adding some filter and close modal) -->
+    <div class="overlay" onclick="closeModal()"></div>
+    <script src="share.js"></script>
+    <script src="https://kit.fontawesome.com/818b9940aa.js" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+.wrapper{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+
+}
+
+.circle1{
+    position: absolute;
+    top: 5%;
+    left: 27.5%;
+    width: 13em;
+    height: 13em;
+    border-radius: 50%;
+    box-shadow: -50px -10px 80px #d84869;
+    background: linear-gradient(-25deg, #d84869, #ce5334);
+    animation: circl1  13s infinite ;
+
+}
+@keyframes circl1 {
+    75%{
+      left: 30%;
+      scale: 1.11;
+    }
+}
+.circle2{
+    position: absolute;
+    bottom: 5%;
+    right: 30%;
+    width: 19em;
+    height: 19em;
+    border-radius: 50%;
+    box-shadow: 50px 20px 80px #5648d8;
+    background: linear-gradient(-25deg, #5648d8, #8641f4);
+    animation: circl2  10s infinite;
+}
+@keyframes circl2 {
+    75%{
+        right: 28%;
+      
+      }
+}
+
+.card{
+    
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid #ffffff30;
+    backdrop-filter: blur(15px);
+    height: 28rem;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: large;
+    padding: 20px 50px;
+    background: #c7c4c433;
+    border-radius: 15px;
+    box-shadow: 2rem 2rem 5rem rgba(15, 15, 15, 0.495);
+}
+img{
+    border: 2px solid #ada8a8dc;
+    height: 9.5rem;
+    width: 9.5rem;
+    border-radius: 50%;
+}
+.info{
+    font-size: 1.7rem;
+}
+.group{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.share{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 12px;
+    background: #ffffff00;
+    border: 2px solid #ffffffb9;
+     border-radius: 4px;
+    color: #ffffffb9;
+    cursor: pointer;
+}
+.follow{
+    width: 150px;
+    padding: 9px 12px;
+    background: #ffffff00;
+    border: 2px solid #ffffffb9;
+    border-radius: 4px;
+    color: #ffffffb9;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.share:hover, .follow:hover{
+    background: #ffffffb9;
+    color: black;
+}
+
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    border: 2px solid #ffffff59;
+    width: 500px;
+    scale: 0;
+    background: #00000088;
+    backdrop-filter: blur(10px);
+    color: white;
+    z-index: 1;
+    padding: 20px 25px;
+    border-radius: 20px;
+    transition: 0.5s ease-in-out;
+  }
+  .modal-headd {
+    display: flex;
+    margin-bottom: 25px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #ffffff88;
+  }
+  .modal-headd div i {
+    font-size: 30px;
+  }
+  .close {
+    cursor: pointer;
+  }
+  .icon-contain {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .icon {
+    border: 1px solid #ffffff88;
+    padding: 17px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    margin: 10px 0px;
+    gap: 10px;
+    justify-content: center;
+    transition: all 0.5s;
+    margin-bottom: 25px;
+    text-decoration: none;
+  }
+  .icon i {
+    font-size: 30px;
+  }
+
+
+  #facebook {
+    color: #1771e6;
+    border: 1px solid #1771e6;
+  }
+  #facebook:hover {
+    background-color: #1771e6;
+    color: #fff;
+  }
+  
+  #twitter {
+    color: #1c99e6;
+    border: 1px solid #1c99e6;
+  }
+  #twitter:hover {
+    background-color: #1c99e6;
+    color: #fff;
+  }
+  
+  #instagram {
+    color: #cb2770;
+    border: 1px solid #cb2770;
+  }
+  #instagram:hover {
+    background-color: #cb2770;
+    color: #fff;
+  }
+  
+  #whatsapp {
+    color: #2fe664;
+    border: 1px solid #2fe664;
+  }
+  #whatsapp:hover {
+    background-color: #2fe664;
+    color: #fff;
+  }
+  
+  #telegram {
+    color: #0081c2;
+    border: 1px solid #0081c2;
+  }
+   #telegram:hover {
+    background-color: #0081c2;
+    color: #fff;
+  }
+  
+  /* after click */
+
+  .active{
+    scale: 1;
+  }
+  .overlay {
+    position: fixed;
+    background-color: #35020283;
+    top: 0;
+    opacity: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+    transition: 0.5s ease-in-out;
+  }
+  .overlayactive {
+    opacity: 1;
+    pointer-events: initial;
+  }
