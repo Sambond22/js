@@ -12,12 +12,7 @@
     color:  #F9F7F7;
     background-image: linear-gradient(160deg, #112d4e 0%, #3f72af 100%);;
 }
-.not-found{
-    display: none;
-}
-.not-found .active{
-    display:block;
-}
+
 h1 {
     text-align: center;
     text-transform:uppercase;
@@ -161,7 +156,7 @@ h1 {
 .info-contain p{
     font-size:1.5rem;
     font-weight:500;
-    color: black;
+    
 }
 
 .info-contain img{
@@ -198,7 +193,7 @@ h1 {
 
 .parameter{
     width:30%;
-    color: black;
+   
     max-width:200px;
     background-color: rgba(219, 226, 239, 0.5);;
     border-radius: 5px;
@@ -219,12 +214,14 @@ h1 {
 .parameter p:first-of-type{
     font-size: 1.15rem;
     font-weight:600;
+    letter-spacing: 0.08rem;
     text-transform: uppercase;
 }
 
 .parameter p:last-of-type{
     font-size: 1rem;
     font-weight: 200;
+    letter-spacing: 0.08rem;
 }
 .load-contain{
     display: none;
@@ -237,3 +234,23 @@ h1 {
 .load-contain p{
     text-transform: uppercase;
 }
+.notfound{
+    display: none;
+   
+}
+.notfound p{
+    display: flex;
+    /* flex-direction: column; */
+    font-size: 2.5rem;
+}
+.notfound img{
+   width: 15rem;
+   height: 15rem;
+}
+.notfound.active{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    transform:translateX(42%) ;
+}   

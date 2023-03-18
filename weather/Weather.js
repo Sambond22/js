@@ -56,7 +56,7 @@ function getfromSessionStorage() {
 
 }
 
-let notfound=document.querySelector(".not-found");
+
 async function fetchUserWeatherInfo(coordinates) {
     const {lat, lon} = coordinates;
     // make grantcontainer invisible
@@ -70,7 +70,7 @@ async function fetchUserWeatherInfo(coordinates) {
             `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
           );
         const  data = await response.json();
-
+        notfound.classList.remove("active");
         loadpage.classList.remove("active");
         wheatherdata.classList.add("active");
         renderWeatherInfo(data);
@@ -78,7 +78,7 @@ async function fetchUserWeatherInfo(coordinates) {
     catch(err) {
         loadingScreen.classList.remove("active");
         
-        notfound.classList.add('active');
+
     }
 
 }
@@ -122,7 +122,8 @@ function getLocation() {
         navigator.geolocation.getCurrentPosition(showPosition);
     }
     else {
-        //HW - show an alert for no gelolocation support available
+     
+        alert("Geolocation not found");
     }
 }
 
@@ -150,6 +151,7 @@ searchpage.addEventListener("submit", (e) => {
         fetchSearchWeatherInfo(cityName);
 })
 
+let notfound=document.querySelector(".notfound");
 async function fetchSearchWeatherInfo(city) {
     loadpage.classList.add("active");
     wheatherdata.classList.remove("active");
@@ -160,12 +162,21 @@ async function fetchSearchWeatherInfo(city) {
             `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
           );
         const data = await response.json();
+        console.log(data);
         loadpage.classList.remove("active");
+        
+       
+        if(data?.cod=="404")
+        {
+            notfound.classList.add("active");
+        }
+        else{
+            notfound.classList.remove("active");
         wheatherdata.classList.add("active");
-        renderWeatherInfo(data);
+        renderWeatherInfo(data);}
     }
     catch(err) {
-        //hW
-        notfound.classList.add('active');
+        wheatherdata.classList.remove("active");
+        notfound.classList.add("active");
     }
 }
