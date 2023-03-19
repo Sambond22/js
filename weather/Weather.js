@@ -15,7 +15,7 @@ function switchpage(nextpage){
         currentpage.classList.remove("current-tab");
         currentpage=nextpage;
         currentpage.classList.add("current-tab");
-    }
+    
 
     if(!searchpage.classList.contains("active")){
           //kya search form wala container is invisible, if yes then make it visible
@@ -35,12 +35,40 @@ function switchpage(nextpage){
         
     }
 }
+}
 usertab.addEventListener("click",()=>{
     switchpage(usertab);
 });
 searchtab.addEventListener("click",()=>{
    switchpage(searchtab);
 });
+
+// click grant access button 
+const grantAccessButton = document.querySelector("[data-grantAccess]");
+grantAccessButton.addEventListener("click", getLocation);
+
+function getLocation() {
+    if(navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    }
+    else {
+     
+        alert("Geolocation not found");
+    }
+}
+
+function showPosition(position) {
+
+    const userCoordinates = {
+        lat: position.coords.latitude,
+        lon: position.coords.longitude,
+    }
+
+    sessionStorage.setItem("user-coordinates", JSON.stringify(userCoordinates));
+    fetchUserWeatherInfo(userCoordinates);
+
+}
+
 
 //check if cordinates are already present in session storage
 function getfromSessionStorage() {
@@ -113,31 +141,7 @@ function renderWeatherInfo(weatherInfo) {
     cloudiness.innerText = `${weatherInfo?.clouds?.all}%`;
 }
 
-// click grant access button 
-const grantAccessButton = document.querySelector("[data-grantAccess]");
-grantAccessButton.addEventListener("click", getLocation);
 
-function getLocation() {
-    if(navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    }
-    else {
-     
-        alert("Geolocation not found");
-    }
-}
-
-function showPosition(position) {
-
-    const userCoordinates = {
-        lat: position.coords.latitude,
-        lon: position.coords.longitude,
-    }
-
-    sessionStorage.setItem("user-coordinates", JSON.stringify(userCoordinates));
-    fetchUserWeatherInfo(userCoordinates);
-
-}
 
 const searchInput = document.querySelector("[data-searchInput]");
 
